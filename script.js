@@ -78,7 +78,7 @@ bucket1.addEventListener("click", (e) => {
   cubeCount++;
 
   if (cubeCount >= maxCubes) {
-    counter1.textContent = "X";
+    counter1.innerHTML = "<span style='color: red;'>X</span>";
     addJarBtn.textContent = "Add Jar";
     addJarBtn.style.display = "block";
     enableCubeTransfer();
@@ -160,7 +160,7 @@ function spawnRodCube(x = 50, y = 30) {
   bucket2.classList.add("vibrate");
   setTimeout(() => bucket2.classList.remove("vibrate"), 300);
 
-  showMessage(`Great job That's 1 ten 0 once.`);
+  showMessage(`Great job That's 1 rod of 10 cubes`);
 
   enableRodReverseTransfer();
 }
@@ -209,7 +209,7 @@ function restoreCubesToBucket1() {
   setTimeout(() => bucket1.classList.remove("vibrate"), 300);
 
   cubeCount = 10;
-  counter1.textContent = "X";
+  counter1.innerHTML = "<span style='color: red;'>X</span>";
 
   // 🛠️ Proper button text logic
   if (bucket2) {
