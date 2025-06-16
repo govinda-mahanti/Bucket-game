@@ -43,7 +43,7 @@ addJarBtn.addEventListener("click", () => {
       wrapper.appendChild(bucket2);
       bucketsContainer.appendChild(wrapper);
 
-      showMessage("Let's group 10 blocks Click a block to make a 'ten'.");
+      showMessage("Let's group 10 blocks Click a block to make a rod.");
     }
 
     jarCreated = true; // ✅ Mark it so reset won't show Add Jar again
