@@ -13,14 +13,19 @@
 
 
 
-body{
+body {
     height: 100%;
     width: 100%;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
+    background-image: url('https://e0.pxfuel.com/wallpapers/596/236/desktop-wallpaper-cartoon-rainbow-sunrise-forest-sun-sky.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  cursor: dot;
 }
+
 
 .container{
     height: 100vh;
@@ -29,7 +34,6 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: #fff;
     gap: 50px;
 }
 
@@ -42,6 +46,9 @@ body{
     position: relative; 
     overflow: hidden;
     border-radius: 20px;
+    border-top: 15px solid purple;
+    background-color: aliceblue;
+box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .counter{
@@ -51,8 +58,10 @@ body{
     align-items: center;
     justify-content: center;
     background: purple;
-    border: 2px solid purple;
+    border-bottom: 4px solid rgb(78, 0, 78);
     border-radius: 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+
 }
 .counter>p{
 
@@ -70,21 +79,30 @@ body{
   border-radius: 4px;
   border: 2px solid red;
   user-select: none;
-  cursor: grab;
 }
+@keyframes subtleVibrate {
+  0% { transform: translate(0); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
+  100% { transform: translate(0); }
+}
+
+.cube:hover {
+  animation: subtleVibrate 0.3s linear infinite;
+}
+
 
 
 .buckets {
     display: flex;
     gap: 50px;
+    cursor: pointer;
 }
 
 
 
 
-.add-jar-btn:hover {
-  background-color: #019875;
-}
 
 
 
@@ -96,6 +114,24 @@ body{
   flex-direction: column;
 }
 
+
+#bucket2 {
+  border-color: rgb(21, 62, 184) !important;
+
+}
+
+
+#bucket2Counter {
+    background-color: rgb(21, 62, 184) !important;
+  color: white; 
+  border-color: rgb(21, 62, 184) !important;
+        border-bottom: 4px solid rgb(7, 32, 108) !important;
+
+}
+
+#bucket2Counter p {
+  color: white;
+}
 
 
 .super-rod {
@@ -121,32 +157,60 @@ body{
 .add-jar-btn {
   position: absolute;
   bottom: 120px;
+  width: 130px;
   left: 50%;
   transform: translateX(-50%);
   padding: 14px 25px;
   font-size: 18px;
   border: none;
   border-radius: 10px;
-  background-color: #2ecc71;
+  background-color: #cc2e2e;
   color: white;
   cursor: pointer;
   display: none;
   z-index: 10;
-  font-weight: 500;
+  font-weight: 700;
   font-family: sans-serif;
+  border-bottom: 8px solid #751a15;
+  border-radius: 100px;
   
 }
 
+.add-jar-btn:hover {
+    bottom: 115px;
+}
 .center-btn {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.bottom-right-btn {
-  bottom: 20px;
-  right: 20px;
-  top: auto;
-  left: auto;
-  transform: none;
+
+
+.message-box {
+  position: fixed;
+  width: 750px;
+  text-align: center;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 25px 24px;
+  background-color: white;
+  color: rgb(0, 2, 136);
+  font-size: 18px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-weight: 700;
+  font-family: sans-serif;
+  font-size: 30px;
+  border: 5px solid rgb(0, 255, 55);
+  border-radius: 50px;
+}
+
+
+.message-box.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
